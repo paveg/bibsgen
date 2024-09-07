@@ -13,6 +13,7 @@ import {
   SelectItem,
 } from '@/components/ui/select';
 
+// TODO: Implement validations
 export const Generator = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [text, setText] = useState('');
@@ -93,12 +94,11 @@ export const Generator = () => {
     <div>
       <div className="space-y-4">
         <canvas
-          className="forced-color-adjust-none"
+          className="border-2 border-primary forced-color-adjust-none"
           ref={canvasRef}
           width={300}
           height={100}
         />
-
         <Input
           value={text}
           onChange={(event) => {
