@@ -8,5 +8,6 @@ module.exports = {
         allow: ['info', 'warn', 'error'],
       },
     ],
+    'import/prefer-default-export': 'off',
   },
 };
