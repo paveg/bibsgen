@@ -67,7 +67,7 @@ export const Generator = () => {
         </Select>
       </div>
 
-      <Button className="mt-10" variant="outline" onClick={handleDownload}>
+      <Button className="mt-10" onClick={handleDownload}>
         ダウンロード
       </Button>
     </div>
