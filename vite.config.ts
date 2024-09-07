@@ -12,9 +12,9 @@ import tsConfigPaths from 'vite-tsconfig-paths';
 const pwaOptions: Partial<VitePWAOptions> = {
   registerType: 'autoUpdate',
   manifest: {
-    short_name: 'vite-react-tailwind-starter',
-    name: 'Vite React App Template',
-    lang: 'en',
+    short_name: 'Bibs Gen',
+    name: 'Bibs Generator',
+    lang: 'ja',
     start_url: '/',
     background_color: '#FFFFFF',
     theme_color: '#FFFFFF',

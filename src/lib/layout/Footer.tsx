@@ -4,8 +4,12 @@ const Footer = () => {
       <div className="flex">
         <p className="text-xs">
           {new Date().getFullYear()} -{' '}
-          <a href="https://sznm.dev" target="_blank" rel="noopener noreferrer">
-            sznm.dev
+          <a
+            href="https://x.com/paveg_"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            funai
           </a>
         </p>
       </div>

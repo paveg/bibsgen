@@ -1,8 +1,8 @@
 {
-  "name": "vite-react-tailwind-starter",
+  "name": "bibsgen",
   "version": "0.1.0",
   "private": true,
-  "author": "sozonome",
+  "author": "funai",
   "type": "module",
   "scripts": {
     "dev": "vite",

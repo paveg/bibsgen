@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet';
 
-const APP_NAME = 'vite-react-tailwind-starter';
+const APP_NAME = 'Bibs Generator';
 
 const Meta = () => {
   return (
     <Helmet>
-      <title>Vite React Tailwind Starter</title>
-      <meta name="description" content="Vite React Tailwind Starter Template" />
+      <title>Bibs Generator</title>
+      <meta name="description" content="Bibs Generator" />
 
       <meta name="application-name" content={APP_NAME} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
