@@ -144,13 +144,15 @@ export const Generator = () => {
           }}
         />
         <Select
-          defaultValue={font}
+          defaultValue={fontList.find((f) => f.value === font)?.value}
           onValueChange={(value) => {
             setFont(value);
           }}
         >
           <SelectTrigger>
-            <SelectValue>{font}</SelectValue>
+            <SelectValue>
+              {fontList.find((f) => f.value === font)?.label}
+            </SelectValue>
           </SelectTrigger>
           <SelectContent>
             {fontList.map((f) => (
