@@ -109,7 +109,12 @@ export const Generator = () => {
         newCtx.fillStyle = backgroundColor.hex;
         newCtx.fillRect(0, 0, newCanvas.width, newCanvas.height);
 
-        newCtx.font = ['1600px', font].join(' ');
+        newCtx.font = [
+          ...(isItalic ? ['italic'] : []),
+          ...(isBold ? ['bold'] : []),
+          '1600px',
+          font,
+        ].join(' ');
         newCtx.textAlign = 'center';
         newCtx.textBaseline = 'middle';
 
