@@ -44,6 +44,9 @@ importers:
       react-helmet:
         specifier: ^6.1.0
         version: 6.1.0(react@18.3.1)
+      react-icons:
+        specifier: ^5.3.0
+        version: 5.3.0(react@18.3.1)
       react-input-color:
         specifier: ^4.0.1
         version: 4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3936,6 +3939,11 @@ packages:
     resolution: {integrity: sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==}
     peerDependencies:
       react: '>=16.3.0'
+
+  react-icons@5.3.0:
+    resolution: {integrity: sha512-DnUk8aFbTyQPSkCfF8dbX6kQjXA9DktMeJqfjrg6cK9vwQVMxmcA3BfP4QoiztVmEHtwlTgLFsPuH2NskKT6eg==}
+    peerDependencies:
+      react: '*'
 
   react-input-color@4.0.1:
     resolution: {integrity: sha512-ev1e0IbB/Chc4wWjGu7/UYsxMrSpz9eI/Ix60BBLCxsANzsfQwcw37lno/7v0ih04ug/B9HEBfTcs2GtsfsIrQ==}
@@ -9081,6 +9089,10 @@ snapshots:
       react: 18.3.1
       react-fast-compare: 3.2.1
       react-side-effect: 2.1.2(react@18.3.1)
+
+  react-icons@5.3.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   react-input-color@4.0.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:

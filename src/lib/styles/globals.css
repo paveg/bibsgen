@@ -25,7 +25,7 @@
 
   .wrapper {
     @apply mx-auto p-6 sm:p-8;
-    max-width: 48rem;
+    max-width: 64rem;
   }
   :root {
     --background: 0 0% 100%;
