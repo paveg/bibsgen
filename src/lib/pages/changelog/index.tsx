@@ -7,6 +7,10 @@ const logLists = [
     date: '2024/09/07',
     content: 'アプリケーションの更新に伴い、フルリニューアル版を公開',
   },
+  {
+    date: '2024/09/09',
+    content: '斜体、太字に対応。DotGothicとMatemasieフォントを追加',
+  },
 ];
 
 const ChangeLog = () => {

@@ -1,8 +1,9 @@
+import type { CheckedState } from '@radix-ui/react-checkbox';
 import { useEffect, useRef, useState } from 'react';
-import type { Color } from 'react-input-color';
-import InputColor from 'react-input-color';
+import InputColor, { type Color } from 'react-input-color';
 
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
@@ -13,11 +14,38 @@ import {
   SelectItem,
 } from '@/components/ui/select';
 
+const fontList = [
+  {
+    value: 'electricboots',
+    label: 'Electric Boots',
+  },
+  {
+    value: 'Arial',
+    label: 'Arial',
+  },
+  {
+    value: 'DotGothic16',
+    label: 'DotGothic',
+  },
+  {
+    value: 'Roboto',
+    label: 'Roboto',
+  },
+  {
+    value: 'Matemasie',
+    label: 'Matemasie',
+  },
+];
+
 // TODO: Implement validations
 export const Generator = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [text, setText] = useState('');
-  const [font, setFont] = useState('electricboots');
+  const [isItalic, setIsItalic] = useState<CheckedState>(false);
+  const [isBold, setIsBold] = useState<CheckedState>(false);
+  const [font, setFont] = useState(
+    fontList.find((f) => f.value === 'electricboots')?.value
+  );
   const [fontColor, setFontColor] = useState<Color>({
     a: 0,
     b: 0,
@@ -52,7 +80,12 @@ export const Generator = () => {
         ctx.fillStyle = backgroundColor.hex;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.font = ['100px', font].join(' ');
+        ctx.font = [
+          ...(isItalic ? ['italic'] : []),
+          ...(isBold ? ['bold'] : []),
+          '100px',
+          font,
+        ].join(' ');
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
@@ -60,7 +93,7 @@ export const Generator = () => {
         ctx.fillText(text, canvas.width / 2, canvas.height / 2);
       }
     }
-  }, [text, font, fontColor, backgroundColor]);
+  }, [text, font, fontColor, backgroundColor, isItalic, isBold]);
 
   const handleDownload = () => {
     const newCanvas = document.createElement('canvas');
@@ -106,6 +139,7 @@ export const Generator = () => {
           }}
         />
         <Select
+          defaultValue={font}
           onValueChange={(value) => {
             setFont(value);
           }}
@@ -114,12 +148,37 @@ export const Generator = () => {
             <SelectValue>{font}</SelectValue>
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="electricboots">Electric Boots</SelectItem>
-            <SelectItem value="Arial">Arial</SelectItem>
-            <SelectItem value="serif">serif</SelectItem>
-            <SelectItem value="Roboto">Roboto</SelectItem>
+            {fontList.map((f) => (
+              <SelectItem key={f.value} value={f.value}>
+                {f.label}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
+        <div className="flex space-x-4">
+          <div className="content-center space-x-2 align-middle">
+            <Checkbox
+              id="italic"
+              checked={isItalic}
+              defaultChecked={false}
+              onCheckedChange={(checked) => {
+                setIsItalic(checked);
+              }}
+            />
+            <Label htmlFor="italic">斜体</Label>
+          </div>
+          <div className="content-center space-x-2 align-middle">
+            <Checkbox
+              id="bold"
+              checked={isBold}
+              defaultChecked={false}
+              onCheckedChange={(checked) => {
+                setIsBold(checked);
+              }}
+            />
+            <Label htmlFor="bold">太字</Label>
+          </div>
+        </div>
         <div className="flex justify-around">
           <div className="flex items-center space-x-2">
             <Label htmlFor="font-color-picker">文字色</Label>
