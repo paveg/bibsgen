@@ -112,7 +112,7 @@ export const Generator = () => {
         newCtx.font = [
           ...(isItalic ? ['italic'] : []),
           ...(isBold ? ['bold'] : []),
-          '1600px',
+          '1500px',
           font,
         ].join(' ');
         newCtx.textAlign = 'center';
