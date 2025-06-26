@@ -88,6 +88,8 @@
     local('electricboots'),
     url(/fonts/ELECTRICBOOTS.ttf) format('truetype');
   font-display: swap;
+  font-weight: normal;
+  font-style: normal;
 }
 
 @layer base {

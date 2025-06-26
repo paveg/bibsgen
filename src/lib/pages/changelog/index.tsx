@@ -11,6 +11,11 @@ const logLists = [
     date: '2024/09/09',
     content: '斜体、太字に対応。DotGothicとMatemasieフォントを追加',
   },
+  {
+    date: '2025/06/26',
+    content:
+      'UIを全面リニューアル。カード型レイアウトとアイコンでより使いやすく改善',
+  },
 ];
 
 const ChangeLog = () => {

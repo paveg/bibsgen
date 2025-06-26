@@ -4,9 +4,13 @@ import { SomeText } from './components/SomeText';
 
 const Home = () => {
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center gap-8 text-center">
-      <SomeText />
-      <Generator />
+    <div className="container mx-auto space-y-12 px-4 py-8">
+      <div className="space-y-4 text-center">
+        <SomeText />
+      </div>
+      <div className="flex justify-center">
+        <Generator />
+      </div>
     </div>
   );
 };
